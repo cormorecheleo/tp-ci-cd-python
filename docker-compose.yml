@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: sqlpass
+      MYSQL_DATABASE: python
+      MYSQL_USER: leo
+      MYSQL_PASSWORD: sqlpass
+    volumes:
+      - ./sqlfiles:/docker-entrypoint-initdb.d/
+    ports:
+      - 3306:3306
+    
+
+  python:
+    restart: always
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mysql
+
+  react:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - python
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true

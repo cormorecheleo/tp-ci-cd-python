@@ -1,2 +1,4 @@
 flask
 flask-restful
+mysql-connector-python
+Flask-CORS

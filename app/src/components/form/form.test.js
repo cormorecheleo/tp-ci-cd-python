@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import Form from './form';
 
 test('soumet le formulaire avec les données saisies', () => {
-    render(<CreateUserForm />);
+    render(<Form />);
   
     const nomInput = screen.getByLabelText(/Nom:/i);
     fireEvent.change(nomInput, { target: { value: 'Doe' } });

@@ -8,6 +8,6 @@ test('affiche la liste des utilisateur', () => {
     // Verification
     const titleElement = screen.getByRole('h2');
     expect(titleElement).toBeInTheDocument();
-    const tableElement = screen.getByRole('table');
-    expect(tableElement) = toBeInTheDocument();
+    const divElement = screen.getByRole('div');
+    expect(divElement) = toBeInTheDocument();
 })

@@ -1,85 +1,87 @@
-2.  Accédez au répertoire du projet :
+\# README - Projet X
 
-bash
+Ce README fournit des instructions pour lancer les architectures Docker et exécuter les tests du projet X.
 
-Copy code
+\## Description du projet
 
-`cd projet-x`
+Le projet X est une application web composée d'un front-end React et d'une API Flask. Il permet aux utilisateurs de \[décrire brièvement les fonctionnalités principales de votre application\].
 
-3.  Installez les dépendances pour le front-end React :
+\## Installation
 
-bash
+1\. Clonez ce dépôt sur votre machine locale :
 
-Copy code
+git clone https://github.com/votre-utilisateur/projet-x.git
 
-`cd app npm install`
+cd projet-x
 
-4.  Installez les dépendances pour l'API Flask :
+2\. Accédez au répertoire du projet :
 
-bash
+cd projet-x
 
-Copy code
+3\. Installez les dépendances pour le front-end React :
 
-`cd ../api pip install -r requirements.txt`
+cd app
 
-## Lancement des architectures Docker
+npm install
+
+4\. Installez les dépendances pour l'API Flask :
+
+cd ../api
+
+pip install -r requirements.txt
+
+\## Lancement des architectures Docker
 
 À partir de la racine du projet, lancez les conteneurs Docker en utilisant Docker Compose :
 
-bash
-
-Copy code
-
-`docker-compose up --build`
+docker-compose up --build
 
 Cela construira les images Docker pour le front-end React et l'API Flask, et démarrera les conteneurs.
 
 Accédez à l'application dans votre navigateur en ouvrant l'URL suivante :
 
-arduino
+http://localhost:3000
 
-Copy code
+\## Tests
 
-`http://localhost:3000`
-
-## Tests
-
-### Tests unitaires
+\### Tests unitaires
 
 Pour exécuter les tests unitaires pour le front-end React :
 
-bash
+cd app
 
-Copy code
-
-`cd app npm test`
+npm test
 
 Pour exécuter les tests unitaires pour l'API Flask :
 
-bash
+cd api
 
-Copy code
+pytest
 
-`cd api pytest`
-
-### Tests d'intégration
+\### Tests d'intégration
 
 Les tests d'intégration sont exécutés automatiquement avec Docker Compose lors du lancement des conteneurs.
 
-### Tests end-to-end avec Cypress
+\### Tests end-to-end avec Cypress
 
 Pour exécuter les tests end-to-end avec Cypress :
 
-bash
+cd app
 
-Copy code
-
-`cd app npx cypress run`
+npx cypress run
 
 Cela lancera les tests Cypress en mode headless.
 
-## Structure du projet
+\## Structure du projet
 
--   **app/** : Contient le front-end React.
--   **api/** : Contient l'API Flask.
--   **docker-compose.yml** : Fichier de configuration Docker Compose.
+\- app/ : Contient le front-end React.
+
+\- api/ : Contient l'API Flask.
+
+\- docker-compose.yml : Fichier de configuration Docker Compose.
+
+\- README.md : Ce fichier README.
+
+\## Contact
+
+Pour toute question ou commentaire, veuillez contacter \[insérez votre nom ou votre adresse e-mail ici\].

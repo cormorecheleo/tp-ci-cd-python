@@ -11,7 +11,7 @@ function Home() {
     // Fonction pour effectuer la requête GET
     async function fetchData() {
         try {
-            const response = await fetch('http://localhost:5002/users');
+            const response = await fetch('http://localhost:5001/users');
             if (!response.ok) {
                 throw new Error('Erreur HTTP ' + response.status);
             }
@@ -31,7 +31,7 @@ function Home() {
 
     async function deleteUser(userId){
         try {
-            const response = await fetch(`http://localhost:5002/users/${userId}`, {
+            const response = await fetch(`http://localhost:5001/users/${userId}`, {
                 method: 'DELETE'
               });
               if (!response.ok) {

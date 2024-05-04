@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          cd app
+          npm install
+
+      - name: Run unit tests
+        run: |
+          cd app
+          npm test
+
+      - name: Run integration tests
+        run: |
+          cd app
+          npm run integration-test
+
+      - name: Build Docker image
+        run: |
+          docker build -t my-app .
+
+      - name: Run Docker container
+        run: |
+          docker run --rm my-app npm run e2e-test
+
+      - name: Install Cypress
+        run: |
+          cd app
+          npm install cypress --save-dev
+
+      - name: Run Cypress tests
+        run: |
+          cd app
+          npx cypress run

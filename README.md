@@ -1,22 +1,21 @@
 \# README - Projet X
 
-Ce README fournit des instructions pour lancer les architectures Docker et exécuter les tests du projet X.
+Ce README fournit des instructions pour lancer les architectures Docker et exécuter les tests du projet.
 
 \## Description du projet
 
-Le projet X est une application web composée d'un front-end React et d'une API Flask. Il permet aux utilisateurs de \[décrire brièvement les fonctionnalités principales de votre application\].
+Le projet X est une application web composée d'un front-end React et d'une API Flask.
 
 \## Installation
 
 1\. Clonez ce dépôt sur votre machine locale :
 
-git clone https://github.com/votre-utilisateur/projet-x.git
+git clone https://github.com/cormorecheleo/tp-ci-cd-python.git
 
-cd projet-x
 
 2\. Accédez au répertoire du projet :
 
-cd projet-x
+cd app / api
 
 3\. Installez les dépendances pour le front-end React :
 
